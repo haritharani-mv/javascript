@@ -19,6 +19,7 @@ function brand(a, b, c){
     let d = a + b + c;
     alert('result is:'+d);
     console.log(d);
+    return d;
 }
 
 brand('hello', 'good', 'evening');
