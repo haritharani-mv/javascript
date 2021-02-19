@@ -1,11 +1,29 @@
-const startGamebtn = document.getElementById('start-game-btn');
+const button = document.querySelector('button');
+const output = document.querySelector('p');
 
-let hobbies = {
-    age:10,
-    game: function startGame(){
-    console.log('game starts');
+function trackUserHandler() {
+  navigator.geolocation.getCurrentPosition(
+    posData => {
+      setTimeout(() => {
+        console.log(posData);
+      }, 2000);
+    },
+    error => {
+      console.log(error);
+    }
+  );
+  setTimeout(() => {
+    console.log('Timer done!');
+  }, 0);
+  console.log('Getting position...');
 }
-};
-//hobbies.game();
 
-startGamebtn.addEventListener('click',hobbies.game);
+button.addEventListener('click', trackUserHandler);
+
+// let result = 0;
+
+// for (let i = 0; i < 100000000; i++) {
+//   result += i;
+// }
+
+// console.log(result);
